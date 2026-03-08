@@ -3,10 +3,16 @@ public class Usuario {
     private String nome;
     private String sobrenome;
     private String cpf;
+    private String dataNascimento;
+    private String email;
+    private String genero;
+    private String senha;
+    private String telefone;
+    private boolean ativo;
+
 
     public Usuario(String cpf, String dataNascimento, String email, String genero, String idUsuario, String nome, String senha, String sobrenome, String telefone) {
         this.cpf = cpf;
-        this.dataNascimento = dataNascimento;
         this.email = email;
         this.genero = genero;
         this.idUsuario = idUsuario;
@@ -14,18 +20,31 @@ public class Usuario {
         this.senha = senha;
         this.sobrenome = sobrenome;
         this.telefone = telefone;
+        this.ativo = true;
+        this.dataNascimento = dataNascimento;
     }
 
-    public void realizarLogoff() {
-        System.out.println("Usuário " + this.nome + " saiu do sistema.");
+
+    public void alterarSenha() {
+        System.out.println("A senha do Usuário " + this.nome + " foi atualizada com sucesso");
     }
 
-    public void alterarsenha() {
-        System.out.println("A senha do Usuário" + this.nome + "foi atualizada com sucesso");
+    public void atualizarPerfil() {
+        System.out.println("Atualizando dados do usuário: " + this.nome);
     }
 
-    private String senha;
-    private String telefone;
+    public void exibirPerfil() {
+        System.out.println("--- Perfil do Usuário ---");
+        System.out.println("Nome: " + this.nome + " " + this.sobrenome);
+        System.out.println("CPF: " + this.cpf);
+        System.out.println("E-mail: " + this.email);
+    }
+
+    public void desativarConta() {
+        this.ativo = false;
+        System.out.println("A conta do usuário " + this.nome + " foi desativada com sucesso.");
+    }
+
 
     public String getEmail() {
         return email;
@@ -36,7 +55,7 @@ public class Usuario {
     }
 
     public String getCpf() {
-        return cpf;
+        return this.cpf;
     }
 
     public void setCpf(String cpf) {
@@ -99,7 +118,9 @@ public class Usuario {
         this.telefone = telefone;
     }
 
-    private String email;
-    private String genero;
-    private String dataNascimento;
+
 }
+
+
+
+
