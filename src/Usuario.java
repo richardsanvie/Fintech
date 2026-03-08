@@ -8,7 +8,7 @@ public class Usuario {
         Ds_email = ds_email;
         Ds_genero = ds_genero;
         Dt_nascimento = dt_nascimento;
-        this.nm_nome = nm_nome;
+        this.nmNome = nm_nome;
         this.nm_sobrenome = nm_sobrenome;
         Nr_Cpf = nr_Cpf;
         Nr_Telefone = nr_Telefone;
