@@ -40,7 +40,7 @@ public class Usuario {
         System.out.println("E-mail: " + this.email);
     }
 
-    public void desativarConta() {
+      public void desativarConta() {
         this.ativo = false;
         System.out.println("A conta do usuário " + this.nome + " foi desativada com sucesso.");
     }
