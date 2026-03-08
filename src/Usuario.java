@@ -1,96 +1,126 @@
 public class Usuario {
-    private String cdUsuario;
-    private String nmNome;
-    private String nmSobrenome;
+    private String idUsuario;
+    private String nome;
+    private String sobrenome;
+    private String cpf;
+    private String dataNascimento;
+    private String email;
+    private String genero;
+    private String senha;
+    private String telefone;
+    private boolean ativo;
 
-    public Usuario(String cdUsuario, String ds_email, String ds_genero, String dt_nascimento, String nm_nome, String nm_sobrenome, String nr_Cpf, String nr_Telefone, String senha) {
-        cdUsuario = cdUsuario;
-        Ds_email = ds_email;
-        Ds_genero = ds_genero;
-        Dt_nascimento = dt_nascimento;
-        this.nmNome = nm_nome;
-        this.nm_sobrenome = nm_sobrenome;
-        Nr_Cpf = nr_Cpf;
-        Nr_Telefone = nr_Telefone;
-        Senha = senha;
+
+    public Usuario(String cpf, String dataNascimento, String email, String genero, String idUsuario, String nome, String senha, String sobrenome, String telefone) {
+        this.cpf = cpf;
+        this.email = email;
+        this.genero = genero;
+        this.idUsuario = idUsuario;
+        this.nome = nome;
+        this.senha = senha;
+        this.sobrenome = sobrenome;
+        this.telefone = telefone;
+        this.ativo = true;
+        this.dataNascimento = dataNascimento;
     }
 
-    private String Nr_Cpf;
-    private String Senha;
-    private String Nr_Telefone;
-    private String Ds_email;
-    private String Ds_genero;
-    private String Dt_nascimento;
 
-    public String getCd_Usuario() {
-        return Cd_Usuario;
+    public void alterarSenha() {
+        System.out.println("A senha do Usuário " + this.nome + " foi atualizada com sucesso");
     }
 
-    public void setCd_Usuario(String cd_Usuario) {
-        Cd_Usuario = cd_Usuario;
+    public void atualizarPerfil() {
+        System.out.println("Atualizando dados do usuário: " + this.nome);
     }
 
-    public String getDs_email() {
-        return Ds_email;
+    public void exibirPerfil() {
+        System.out.println("--- Perfil do Usuário ---");
+        System.out.println("Nome: " + this.nome + " " + this.sobrenome);
+        System.out.println("CPF: " + this.cpf);
+        System.out.println("E-mail: " + this.email);
     }
 
-    public void setDs_email(String ds_email) {
-        Ds_email = ds_email;
+      public void desativarConta() {
+        this.ativo = false;
+        System.out.println("A conta do usuário " + this.nome + " foi desativada com sucesso.");
     }
 
-    public String getDs_genero() {
-        return Ds_genero;
+
+    public String getEmail() {
+        return email;
     }
 
-    public void setDs_genero(String ds_genero) {
-        Ds_genero = ds_genero;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getDt_nascimento() {
-        return Dt_nascimento;
+    public String getCpf() {
+        return this.cpf;
     }
 
-    public void setDt_nascimento(String dt_nascimento) {
-        Dt_nascimento = dt_nascimento;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
-    public String getNm_nome() {
-        return nm_nome;
+    public String getDataNascimento() {
+        return dataNascimento;
     }
 
-    public void setNm_nome(String nm_nome) {
-        this.nm_nome = nm_nome;
+    public void setDataNascimento(String dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
 
-    public String getNm_sobrenome() {
-        return nm_sobrenome;
+    public String getGenero() {
+        return genero;
     }
 
-    public void setNm_sobrenome(String nm_sobrenome) {
-        this.nm_sobrenome = nm_sobrenome;
+    public void setGenero(String genero) {
+        this.genero = genero;
     }
 
-    public String getNr_Cpf() {
-        return Nr_Cpf;
+    public String getIdUsuario() {
+        return idUsuario;
     }
 
-    public void setNr_Cpf(String nr_Cpf) {
-        Nr_Cpf = nr_Cpf;
+    public void setIdUsuario(String idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
-    public String getNr_Telefone() {
-        return Nr_Telefone;
+    public String getNome() {
+        return nome;
     }
 
-    public void setNr_Telefone(String nr_Telefone) {
-        Nr_Telefone = nr_Telefone;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getSenha() {
-        return Senha;
+        return senha;
     }
 
     public void setSenha(String senha) {
-        Senha = senha;
+        this.senha = senha;
     }
+
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+
 }
+
+
+
+
