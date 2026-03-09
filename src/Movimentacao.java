@@ -1,52 +1,95 @@
-import java.util.Date;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public abstract class Movimentacao {
-    private int cdMovimentacao;
-    private double nrValor;
-    private String dsRecorrencia;
-    Usuario usuario;
+    private Long id;
+    private BigDecimal valor;
+    private String descricao;
+    private String recorrencia;
+    private Long usuarioId;
+    private LocalDate data = LocalDate.now();
 
+    // Construtors
     public Movimentacao() {
     }
 
-    public Movimentacao(int cdMovimentacao, double nrValor, String dsRecorrencia, Usuario usuario) {
-        this.cdMovimentacao = cdMovimentacao;
-        this.nrValor = nrValor;
-        this.dsRecorrencia = dsRecorrencia;
-        this.usuario = usuario;
+    public Movimentacao(BigDecimal valor, String descricao, String recorrencia, Long usuarioId, LocalDate data) {
+        this.valor = valor;
+        this.descricao = descricao;
+        this.recorrencia = recorrencia;
+        this.usuarioId = usuarioId;
+        this.data = data;
     }
 
-    public int getCdMovimentacao() {
-        return cdMovimentacao;
+    // Getters and Setters
+    public Long getId() {
+        return id;
     }
 
-    public void setCdMovimentacao(int cdMovimentacao) {
-        this.cdMovimentacao = cdMovimentacao;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public double getNrValor() {
-        return nrValor;
+    public BigDecimal getValor() {
+        return valor;
     }
 
-    public void setNrValor(double nrValor) {
-        this.nrValor = nrValor;
+    public void setValor(BigDecimal valor) {
+        this.valor = valor;
     }
 
-    public String getDsRecorrencia() {
-        return dsRecorrencia;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setDsRecorrencia(String dsRecorrencia) {
-        this.dsRecorrencia = dsRecorrencia;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public String getRecorrencia() {
+        return recorrencia;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setRecorrencia(String recorrencia) {
+        this.recorrencia = recorrencia;
     }
 
-    public abstract String getMovimentacao();
+    public Long getUsuarioId() {
+        return usuarioId;
+    }
+
+    public void setUsuarioId(Long usuarioId) {
+        this.usuarioId = usuarioId;
+    }
+
+    public LocalDate getData() {
+        return data;
+    }
+
+    public void setData(LocalDate data) {
+        this.data = data;
+    }
+
+
+    // Métodos
+    public void registrar() {
+        System.out.println("Executando método registrar() - Registrando movimentação do tipo: " + getTipo() + " no valor de R$" + getValor());
+    }
+
+    public void cancelar() {
+        System.out.println("Executando método cancelar() - Cancelando movimentação ID: " + getId());
+    }
+
+    public void consultarStatus() {
+        System.out.println("Executando método consultarStatus() - Status da movimentação " + getId() + ": " + getStatus());
+    }
+
+    public void gerarComprovante() {
+        System.out.println("Executando método gerarComprovante() - Gerando comprovante da movimentação ID: " + getId());
+    }
+
+    // Abstract
+    public abstract boolean validar();
+    public abstract String getTipo();
+    public abstract String getStatus();
 }
