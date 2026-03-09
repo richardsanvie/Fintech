@@ -1,20 +1,22 @@
+import java.math.BigDecimal;
+
 public class Conta {
     private int cdConta;
     private String dsBanco;
     private String dsDescricao;
     private String tpConta;
-    private double nrReceita;
+    private  BigDecimal nrReceita;
     private Usuario usuario;
 
-    public String getcdUsuario(){
-        return usuario.getCd_Usuario();
+    public String getIdUsuario(){
+        return usuario.getIdUsuario();
     }
 
     // Construtores
     public Conta() {
     }
 
-    public Conta(int cdConta, String dsBanco, String dsDescricao, String tpConta, double receita, Usuario usuario) {
+    public Conta(int cdConta, String dsBanco, String dsDescricao, String tpConta, BigDecimal receita, Usuario usuario) {
         this.cdConta = cdConta;
         this.dsBanco = dsBanco;
         this.dsDescricao = dsDescricao;
@@ -57,11 +59,11 @@ public class Conta {
         this.tpConta = tpConta;
     }
 
-    public double getReceita() {
+    public BigDecimal getReceita() {
         return nrReceita;
     }
 
-    public void setReceita(double receita) {
+    public void setReceita(BigDecimal receita) {
         this.nrReceita = receita;
     }
 
@@ -75,16 +77,20 @@ public class Conta {
 
 
     // Métodos
-    public void depositar(double valor){
-        nrReceita += valor;
+    public void depositar(BigDecimal valor){
+        nrReceita = nrReceita.add(valor);
+        System.out.println("Depósito realizado.");
+
     }
 
-    public void transferir(double valor, Conta contaDestino){
-        if (valor > nrReceita){
+    public void transferir(BigDecimal valor, Conta contaDestino){
+        if (valor.compareTo(nrReceita)>0){
             System.out.println("Saldo insuficiente.");
             return;
         }
-        nrReceita -= valor;
+        nrReceita = nrReceita.subtract(valor);
+        System.out.println("Transferência realizada.");
+
     }
 
 
