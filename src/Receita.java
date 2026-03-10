@@ -1,57 +1,27 @@
+import java.time.LocalDate;
+import java.math.BigDecimal;
+
+
 public class Receita {
 
     private String descricao;
-    private double valor;
+    private BigDecimal valor;
     private LocalDate data;
     private int cdReceita;
-    private int cdMovimentaçao;
+    private int cdMovimentacao;
     private int cdUsuario;
 
 
-    public Receita(String descricao, double valor, LocalDate data, int cdReceita, int cdMovimentaçao, int cdUsuario) {
+
+    public Receita(String descricao, BigDecimal valor, LocalDate data, int cdReceita, int cdMovimentacao, int cdUsuario) {
         this.descricao = descricao;
         this.valor = valor;
         this.data = data;
-        this.cdMovimentaçao = cdMovimentaçao;
+        this.cdMovimentacao = cdMovimentacao;
         this.cdReceita = cdReceita;
         this.cdUsuario = cdUsuario;
     }
-    public String getDescricao() {
-        return descricao;
-    }
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-    public double getValor() {
-        return valor;
-    }
-    public void setValor(double valor) {
-        this.valor = valor;
-    }
-    public LocalDate getData() {
-        return data;
-    }
-    public void setData(LocalDate data) {
-        this.data = data;
-    }
-    public int getCdReceita() {
-        return cdReceita;
-    }
-    public void setCdReceita(int cdReceita) {
-        this.cdReceita = cdReceita;
-    }
-    public int getCdMovimentaçao() {
-        return cdMovimentaçao;
-    }
-    public void setCdMovimentaçao(int cdMovimentaçao) {
-        this.cdMovimentaçao = cdMovimentaçao;
-    }
-    public int getCdUsuario() {
-        return cdUsuario;
-    }
-    public void setCdUsuario(int cdUsuario) {
-        this.cdUsuario = cdUsuario;
-    }
+
     public void cadastrarReceita() {
         System.out.println("Receita cadastrada com sucesso!");
     }
