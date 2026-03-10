@@ -34,7 +34,7 @@ public class Usuario {
     }
 
     public void exibirPerfil() {
-        System.out.println("--- Perfil do Usuário ---");
+        System.out.println("Perfil do Usuário");
         System.out.println("Nome: " + this.nome + " " + this.sobrenome);
         System.out.println("CPF: " + this.cpf);
         System.out.println("E-mail: " + this.email);
@@ -118,6 +118,13 @@ public class Usuario {
         this.telefone = telefone;
     }
 
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
+    }
 
 }
 
