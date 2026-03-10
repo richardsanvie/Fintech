@@ -3,10 +3,10 @@ import java.time.LocalDate;
 
 public class Movimentacao {
     private Long id;
+    private Long usuarioId;
     private BigDecimal valor;
     private String descricao;
     private String recorrencia;
-    private Long usuarioId;
     private LocalDate data = LocalDate.now();
 
     // Construtors

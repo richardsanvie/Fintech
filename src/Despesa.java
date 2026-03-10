@@ -1,25 +1,34 @@
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
 public class Despesa {
 
-    private int despesa;
+    private Long id;
+    private Long movimentacaoId;
+    private Long usuarioId;
     private String categoria;
     private String subcategoria;
     private String recorrencia;
-    private String pago;
-    private String condicao;
-    private int movimentacao;
-    private int usuario;
+    private boolean pago;
+    private boolean condicao;
+    private BigDecimal valor;
+    private LocalDate data;
 
-    public Despesa(int despesa, String categoria, String subcategoria, String recorrencia, String pago, String condicao, int movimentacao, int usuario) {
-        this.despesa = despesa;
+    public Despesa(Long id, Long movimentacaoId, Long usuarioId, String categoria, String subcategoria, String recorrencia, boolean pago, boolean condicao, BigDecimal valor, LocalDate data) {
+        this.id = id;
+        this.movimentacaoId = movimentacaoId;
+        this.usuarioId = usuarioId;
         this.categoria = categoria;
         this.subcategoria = subcategoria;
         this.recorrencia = recorrencia;
         this.pago = pago;
         this.condicao = condicao;
-        this.movimentacao = movimentacao;
-        this.usuario = usuario;
+        this.valor = valor;
+        this.data = data;
     }
 
+    public Despesa() {
+    }
 
     public void cadastrarDespesa() {
         System.out.println("Cadastrando despesa");

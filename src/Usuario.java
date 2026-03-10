@@ -1,9 +1,11 @@
+import java.time.LocalDate;
+
 public class Usuario {
-    private String idUsuario;
+    private Long id;
     private String nome;
     private String sobrenome;
     private String cpf;
-    private String dataNascimento;
+    private LocalDate dataNascimento;
     private String email;
     private String genero;
     private String senha;
@@ -11,11 +13,11 @@ public class Usuario {
     private boolean ativo;
 
 
-    public Usuario(String cpf, String dataNascimento, String email, String genero, String idUsuario, String nome, String senha, String sobrenome, String telefone) {
+    public Usuario(String cpf, LocalDate dataNascimento, String email, String genero, Long id, String nome, String senha, String sobrenome, String telefone) {
         this.cpf = cpf;
         this.email = email;
         this.genero = genero;
-        this.idUsuario = idUsuario;
+        this.id = id;
         this.nome = nome;
         this.senha = senha;
         this.sobrenome = sobrenome;
@@ -24,6 +26,8 @@ public class Usuario {
         this.dataNascimento = dataNascimento;
     }
 
+    public Usuario() {
+    }
 
     public void alterarSenha() {
         System.out.println("A senha do Usuário " + this.nome + " foi atualizada com sucesso");
@@ -44,9 +48,6 @@ public class Usuario {
         this.ativo = false;
         System.out.println("A conta do usuário " + this.nome + " foi desativada com sucesso.");
     }
-
-
-
 }
 
 

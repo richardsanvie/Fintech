@@ -4,22 +4,26 @@ import java.math.BigDecimal;
 
 public class Receita {
 
+    private Long id;
+    private Long movimentacaoId;
+    private Long usuarioId;
     private String descricao;
     private BigDecimal valor;
     private LocalDate data;
-    private int receita;
-    private int movimentacao;
-    private int usuario;
+    private String recorrencia;
 
 
+    public Receita() {
+    }
 
-    public Receita(String descricao, BigDecimal valor, LocalDate data, int receita, int movimentacao, int usuario) {
+    public Receita(Long id, Long movimentacaoId, Long usuarioId, String descricao, BigDecimal valor, LocalDate data, String recorrencia) {
+        this.id = id;
+        this.movimentacaoId = movimentacaoId;
+        this.usuarioId = usuarioId;
         this.descricao = descricao;
         this.valor = valor;
         this.data = data;
-        this.movimentacao = movimentacao;
-        this.receita = receita;
-        this.usuario = usuario;
+        this.recorrencia = recorrencia;
     }
 
     public void cadastrarReceita() {
@@ -35,3 +39,4 @@ public class Receita {
         System.out.println("Listando receitas...");
     }
 }
+
