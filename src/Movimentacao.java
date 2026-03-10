@@ -1,7 +1,7 @@
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public abstract class Movimentacao {
+public class Movimentacao {
     private Long id;
     private BigDecimal valor;
     private String descricao;
@@ -23,8 +23,6 @@ public abstract class Movimentacao {
 
 
     // Métodos
-
-
     public void cancelar() {
         System.out.println("Executando método cancelar() - Cancelando movimentação ID: " + id);
     }
