@@ -1,23 +1,23 @@
 public class Despesa {
 
-    private int cdDespesa;
-    private String dsCategoria;
-    private String dsSubcategoria;
-    private String dsRecorrencia;
-    private String fgPago;
-    private String dsCondicao;
-    private int cdMovimentacao;
-    private int cdUsuario;
+    private int despesa;
+    private String categoria;
+    private String subcategoria;
+    private String recorrencia;
+    private String pago;
+    private String condicao;
+    private int movimentacao;
+    private int usuario;
 
-    public Despesa(int cdDespesa, String dsCategoria, String dsSubcategoria, String dsRecorrencia, String fgPago, String dsCondicao, int cdMovimentacao, int cdUsuario) {
-        this.cdDespesa = cdDespesa;
-        this.dsCategoria = dsCategoria;
-        this.dsSubcategoria = dsSubcategoria;
-        this.dsRecorrencia = dsRecorrencia;
-        this.fgPago = fgPago;
-        this.dsCondicao = dsCondicao;
-        this.cdMovimentacao = cdMovimentacao;
-        this.cdUsuario = cdUsuario;
+    public Despesa(int despesa, String categoria, String subcategoria, String recorrencia, String pago, String condicao, int movimentacao, int usuario) {
+        this.despesa = despesa;
+        this.categoria = categoria;
+        this.subcategoria = subcategoria;
+        this.recorrencia = recorrencia;
+        this.pago = pago;
+        this.condicao = condicao;
+        this.movimentacao = movimentacao;
+        this.usuario = usuario;
     }
 
 
