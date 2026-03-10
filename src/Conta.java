@@ -8,9 +8,7 @@ public class Conta {
     private  BigDecimal nrReceita;
     private Usuario usuario;
 
-    public String getIdUsuario(){
-        return usuario.getIdUsuario();
-    }
+
 
     // Construtores
     public Conta() {
@@ -22,56 +20,6 @@ public class Conta {
         this.dsDescricao = dsDescricao;
         this.tpConta = tpConta;
         this.nrReceita = receita;
-        this.usuario = usuario;
-    }
-
-
-    // Getters and Setters
-    public int getCdConta() {
-        return cdConta;
-    }
-
-    public void setCdConta(int cdConta) {
-        this.cdConta = cdConta;
-    }
-
-    public String getDsBanco() {
-        return dsBanco;
-    }
-
-    public void setDsBanco(String dsBanco) {
-        this.dsBanco = dsBanco;
-    }
-
-    public String getDsDescricao() {
-        return dsDescricao;
-    }
-
-    public void setDsDescricao(String dsDescricao) {
-        this.dsDescricao = dsDescricao;
-    }
-
-    public String getTpConta() {
-        return tpConta;
-    }
-
-    public void setTpConta(String tpConta) {
-        this.tpConta = tpConta;
-    }
-
-    public BigDecimal getReceita() {
-        return nrReceita;
-    }
-
-    public void setReceita(BigDecimal receita) {
-        this.nrReceita = receita;
-    }
-
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
 
